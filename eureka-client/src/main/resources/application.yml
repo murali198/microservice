@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: eureka-client-service
+---
+eureka:
+  instance:
+    appname: eureka-client-service
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:7778/eureka
+server:
+  port: 8000
+
+---
+spring:
+  profiles: in
+eureka:
+  instance:
+    appname: eureka-client-service
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:7779/eureka
+server:
+  port: 8001
+
+---
+spring:
+  profiles: fr
+eureka:
+  instance:
+    appname: eureka-client-service
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:7780/eureka
+server:
+  port: 8002
